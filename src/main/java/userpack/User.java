@@ -1,4 +1,6 @@
 package userpack;
+import exceptionspack.AuthenticationError;
+
 public abstract class User {
     private String email;
     private String password;

@@ -1,13 +1,12 @@
-package User;
+package userpack;
 
-import Exceptions.AdminActionError;
-import Exceptions.FragranceError;
+import exceptionspack.*;
 
 public class Administrator extends User {
 
     // Constructor
-    public Administrator(String email, String password, String full_name, String phone_number) {
-        super(email, password, full_name, phone_number);
+    public Administrator(String email, String password, String full_name, String address, String phone_number) {
+        super(email, password, full_name, address, phone_number);
     }
 
     // Methods

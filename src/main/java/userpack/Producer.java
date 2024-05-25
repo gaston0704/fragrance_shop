@@ -1,8 +1,10 @@
 package userpack;
+
 import java.util.ArrayList;
+import exceptionspack.*;
 
 public class Producer extends User {
-    private final ArrayList<Fragrance> fragrances;
+    private final ArrayList<String> fragrances;
 
     // Constructor
     public Producer(String email, String password, String fullName, String address, String phoneNumber) {
