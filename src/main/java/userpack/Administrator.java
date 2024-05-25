@@ -1,4 +1,4 @@
-package userpack;
+package User;
 
 import Exceptions.AdminActionError;
 import Exceptions.FragranceError;
@@ -11,47 +11,47 @@ public class Administrator extends User {
     }
 
     // Methods
-    public void accept_book_request(Author author, String book) throws AdminActionError, FragranceError {
-        if (book == null || book.isEmpty()) {
-            throw new AdminActionError("Book request is invalid.");
+    public void accept_fragrance_request(Producer producer, String fragrance) throws AdminActionError, FragranceError {
+        if (fragrance == null || fragrance.isEmpty()) {
+            throw new AdminActionError("fragrance request is invalid.");
         }
-        author.add_book(book);
-        System.out.println("Book request accepted: " + book + " by " + author.getFull_name());
+        producer.add_fragrance(fragrance);
+        System.out.println("Fragrance request accepted: " + fragrance + " by " + producer.getFullName());
     }
 
-    public void deny_book_request(Author author, String book) throws AdminActionError {
-        if (book == null || book.isEmpty()) {
-            throw new AdminActionError("Book request is invalid.");
+    public void deny_fragrance_request(Producer producer, String fragrance) throws AdminActionError {
+        if (fragrance == null || fragrance.isEmpty()) {
+            throw new AdminActionError("Fragrance request is invalid.");
         }
-        System.out.println("Book request denied: " + book + " by " + author.getFull_name());
+        System.out.println("Fragrance request denied: " + fragrance + " by " + producer.getFullName());
     }
 
-    public void accept_author_request(Author author) throws AdminActionError {
-        if (author == null) {
-            throw new AdminActionError("Author request is invalid.");
+    public void accept_producer_request(Producer producer) throws AdminActionError {
+        if (producer == null) {
+            throw new AdminActionError("Producer request is invalid.");
         }
-        System.out.println("Author request accepted: " + author.getFull_name());
+        System.out.println("Producer request accepted: " + producer.getFullName());
     }
 
-    public void deny_author_request(Author author) throws AdminActionError {
-        if (author == null) {
-            throw new AdminActionError("Author request is invalid.");
+    public void deny_producer_request(Producer producer) throws AdminActionError {
+        if (producer == null) {
+            throw new AdminActionError("Producer request is invalid.");
         }
-        System.out.println("Author request denied: " + author.getFull_name());
+        System.out.println("Producer request denied: " + producer.getFullName());
     }
 
-    public void accept_order(Client client, String order) throws AdminActionError {
+    public void accept_order(Customer client, String order) throws AdminActionError {
         if (order == null || order.isEmpty()) {
             throw new AdminActionError("Order request is invalid.");
         }
         client.getOrder_history().add(order);
-        System.out.println("Order request accepted: " + order + " by " + client.getFull_name());
+        System.out.println("Order request accepted: " + order + " by " + client.getFullName());
     }
 
-    public void deny_order(Client client, String order) throws AdminActionError {
+    public void deny_order(Customer client, String order) throws AdminActionError {
         if (order == null || order.isEmpty()) {
             throw new AdminActionError("Order request is invalid.");
         }
-        System.out.println("Order request denied: " + order + " by " + client.getFull_name());
+        System.out.println("Order request denied: " + order + " by " + client.getFullName());
     }
 }
